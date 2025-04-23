@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Task Mngr</title>
+<style>
+body{font-famly:Arial,sans-serif;background:#f0f0f0;padding:20px}
+.container{width:300px;margin:auto;background:white;paddin:10px;bordr-radius:5px;box-shdow:2px 2px 5px #ccc}
+h2{text-align:center;color:#333}
+input[type="text"]{width:90%;padding:5px;margin-bottom:5px}
+button{padding:5px;background:blue;color:#fff;border:none;cursor:pointer}
+ul{list-style:none;padding-left:0}
+li{background:#eee;margin:3px 0;padding:5px}
+</style>
+</head>
+<body>
+<div class="container">
+<h2>my tsk list</h2>
+<input type="text" id="tskinput" placeholder="Add new task">
+<button onclick="adTask()">Add</button>
+<ul id="tsklist"></ul>
+</div>
+<script>
+function adTask(){
+var inp=document.getElementById("tskinput")
+var tsk=inp.value
+if(tsk.trim()!=""){
+var li=document.createElement("li")
+li.textContent=tsk
+document.getElementById("tsklist").appendChild(li)
+inp.value=""
+}
+}
+</script>
+</body>
+</html>
